@@ -15,7 +15,32 @@ const routes: Routes = [
   {
     path: 'register',
     loadChildren: () => import('./users/register/register.module').then( m => m.RegisterPageModule)
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./auth/login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'logingenerate',
+    loadChildren: () => import('./auth/logingenerate/logingenerate.module').then( m => m.LogingeneratePageModule)
+  },
+  {
+    path: 'reset-password',
+    loadChildren: () => import('./auth/reset-password/reset-password.module').then( m => m.ResetPasswordPageModule)
+  },
+  {
+    path: 'home',
+    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   }
+  { path: '', 
+    redirectTo: 'login', pathMatch: 'full' },
+  { path: 'login', 
+    loadChildren: () => import('./auth/login/login.module').then(m => m.LoginPageModule) },
+  { path: 'reset-password', 
+    loadChildren: () => import('./auth/reset-password/reset-password.module').then(m => m.ResetPasswordPageModule) },
+  { path: 'home', 
+    loadChildren: () => import('./home/home.module').then(m => m.HomePageModule), canActivate: [AuthGuard] },
+  
 ];
 
 @NgModule({
