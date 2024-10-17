@@ -1,0 +1,90 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Ver Mangas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <img alt="Silhouette of mountains" src="assets/icon/48ce5aa33ebee9712f472569198fcfbe.jpg" />
+    <ion-card-header>
+      <ion-card-title>Kaiju Tomo 9</ion-card-title>
+      <ion-card-subtitle></ion-card-subtitle>
+    </ion-card-header>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title></ion-card-title>
+        <ion-card-subtitle></ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        <div class="button-container">
+          <ion-button id="open-modal-1" fill="clear">Ver Sinopsis</ion-button>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </ion-card>
+
+  <ion-card>
+    <img alt="Silhouette of mountains" src="assets/icon/images.jpg" />
+    <ion-card-header>
+      <ion-card-title>Kaiju Tomo 9</ion-card-title>
+      <ion-card-subtitle></ion-card-subtitle>
+    </ion-card-header>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title></ion-card-title>
+        <ion-card-subtitle></ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        <div class="button-container">
+          <ion-button id="open-modal-2" fill="clear">Ver Sinopsis</ion-button>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </ion-card>
+
+  <!-- Modal 1 -->
+  <ion-modal #modal1 trigger="open-modal-1" (ionWillPresent)="showLoading()">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>Sinopsis Kaiju 8</ion-title>
+          <ion-buttons slot="end">
+            <ion-button (click)="modal1.dismiss()">Cerrar</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <p>Japón tiene la mayor tasa de incidencias por ataques de Kaijus de todo el mundo. Los Kaijus irrumpen continuamente y sin piedad en las vidas cotidianas de la gente. Kafka Hibino, que siempre quiso ser un miembro de las Fuerzas de Defensa, actualmente trabaja como limpiador de cadáveres de Kaijus. Sin embargo, un día, una misteriosa criatura convierte a Kafka en un Kaiju, y las Fuerzas de Defensa de Japón, encargados de derrotar a estos monstruos, le identificaron con el nombre clave de “Kaiju N.8”.</p>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+
+  <!-- Modal 2 -->
+  <ion-modal #modal2 trigger="open-modal-2" (ionWillPresent)="showLoading()">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>Kaiju 8</ion-title>
+          <ion-buttons slot="end">
+            <ion-button (click)="modal2.dismiss()">Cerrar</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <p>Japón tiene la mayor tasa de incidencias por ataques de Kaijus de todo el mundo. Los Kaijus irrumpen continuamente y sin piedad en las vidas cotidianas de la gente. Kafka Hibino, que siempre quiso ser un miembro de las Fuerzas de Defensa, actualmente trabaja como limpiador de cadáveres de Kaijus. Sin embargo, un día, una misteriosa criatura convierte a Kafka en un Kaiju, y las Fuerzas de Defensa de Japón, encargados de derrotar a estos monstruos, le identificaron con el nombre clave de “Kaiju N.8”.</p>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+
+  <!-- Loading Overlay -->
+  <ion-loading
+    #loading
+    message="Cargando..."
+    duration="0"
+    cssClass="loading-class"
+  ></ion-loading>
+</ion-content>
